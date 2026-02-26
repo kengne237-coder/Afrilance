@@ -1,0 +1,929 @@
+:root {
+    --primary: #0066ed;
+    --secondary: #fdc800;
+    --dark-blue: #001d91;
+    --footer-dark: #04008c;
+    --text-muted-custom: #555;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: #333;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+
+/* ===================== TOPBAR ===================== */
+
+#tophead {
+    background-color: var(--primary);
+    color: #d0d6dd;
+    font-size: 13px;
+    padding: 6px 0;
+}
+
+#tophead a {
+    color: #d0d6dd;
+    text-decoration: none;
+}
+
+#tophead a:hover {
+    color: var(--secondary);
+}
+
+#tophead .tophead-contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#tophead .tophead-contact li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#tophead .tophead-contact i {
+    color: var(--secondary);
+}
+
+.login-btn a {
+    color: #d0d6dd;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-btn a:hover {
+    color: var(--secondary);
+}
+
+
+/* ===================== HEADER ===================== */
+
+#masthead {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-branding img {
+    height: 55px;
+    width: auto;
+}
+
+.main-navigation ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.main-navigation ul.menu>li>a {
+    display: block;
+    padding: 22px 14px;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.main-navigation ul.menu>li>a:hover,
+.main-navigation ul.menu>li.current-menu-item>a {
+    color: var(--secondary);
+}
+
+.main-navigation ul.menu>li {
+    position: relative;
+}
+
+.main-navigation ul.menu>li .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--primary);
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    min-width: 220px;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-navigation ul.menu>li:hover .sub-menu {
+    display: block;
+}
+
+.main-navigation ul.menu>li .sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.main-navigation ul.menu>li .sub-menu li a:hover {
+    color: var(--secondary);
+}
+
+
+/* ===================== HERO SLIDER ===================== */
+
+.hero-slider {
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero-desc {
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-size: 19px;
+    color: var(--secondary);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    background: var(--secondary);
+    color: #222;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+.hero-btn:hover {
+    opacity: 0.85;
+    color: #222;
+}
+
+
+/* Slider nav arrows */
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.slider-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.slider-nav.prev {
+    left: 20px;
+}
+
+.slider-nav.next {
+    right: 20px;
+}
+
+
+/* ===================== FEATURES BAR ===================== */
+
+.features-bar {
+    background: #fff;
+    padding: 40px 0;
+    border-bottom: 3px solid #f0f0f0;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 26px;
+    color: var(--primary);
+}
+
+.feature-item h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+}
+
+
+/* ===================== LAND OF EXPERT BANNER ===================== */
+
+.loe-banner {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+}
+
+.loe-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 30, 0.6);
+}
+
+.loe-banner h2 {
+    position: relative;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--secondary);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ===================== SECTION TITLES ===================== */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h1,
+.section-title h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto 16px;
+    max-width: 300px;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.section-divider-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--secondary);
+    border-radius: 50%;
+}
+
+
+/* ===================== NOS SERVICES ===================== */
+
+.services-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 30px 24px;
+    height: 100%;
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 102, 237, 0.12);
+    transform: translateY(-4px);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    color: var(--primary);
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background: var(--primary);
+    color: #fff;
+}
+
+.service-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.service-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: #222;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+
+/* ===================== FORMATION CENTER ===================== */
+
+.formation-section {
+    background: var(--primary);
+    color: #fff;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.formation-section::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.formation-section h2 {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.formation-section h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.formation-section p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.formation-section .badge-year {
+    background: var(--secondary);
+    color: #222;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.btn-inscrit {
+    background: var(--secondary);
+    color: #222;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+}
+
+.btn-inscrit:hover {
+    opacity: 0.85;
+    color: #222;
+}
+
+
+/* Raisons AFRILANE */
+
+.raisons-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.raisons-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.raisons-list li i {
+    color: var(--secondary);
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+
+/* ===================== STATS / COUNTERS ===================== */
+
+.stats-section {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.stat-body h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.stat-body p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* ===================== EVENEMENT ===================== */
+
+.event-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.event-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 20px 24px;
+}
+
+.event-header h3 {
+    color: var(--secondary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.event-header .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.event-body {
+    padding: 24px;
+}
+
+.event-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-body ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-body ul li i {
+    color: var(--secondary);
+}
+
+
+/* ===================== PRESTATIONS ===================== */
+
+.prestation-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.prestation-card {
+    border-left: 4px solid var(--secondary);
+    padding: 20px;
+    background: #f9f9ff;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s;
+}
+
+.prestation-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 102, 237, 0.1);
+}
+
+.prestation-card h4 {
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.prestation-card p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* ===================== A PROPOS ===================== */
+
+.about-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.about-section h2 {
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.about-section p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-img {
+    border-radius: 8px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.btn-contact {
+    background: var(--secondary);
+    color: var(--primary);
+    font-weight: 700;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 16px;
+    transition: opacity 0.2s;
+}
+
+.btn-contact:hover {
+    opacity: 0.85;
+    color: var(--primary);
+}
+
+
+/* ===================== TESTIMONIALS ===================== */
+
+.testimonials-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.testimonial-card {
+    background: #f9f9ff;
+    border-radius: 10px;
+    padding: 28px;
+    border: 1px solid #e8e8f0;
+    height: 100%;
+}
+
+.testimonial-text {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.testimonial-role {
+    font-size: 12px;
+    color: var(--secondary);
+}
+
+.stars {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+
+/* ===================== PORTFOLIO ===================== */
+
+.portfolio-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.portfolio-img:hover {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+
+/* ===================== PARTENAIRES ===================== */
+
+.partners-section {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.partner-logo {
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+/* ===================== FOOTER ===================== */
+
+.footer-top {
+    background: var(--dark-blue);
+    padding: 40px 0;
+    color: #f5f5f5;
+}
+
+.footer-bottom {
+    background: var(--footer-dark);
+    padding: 14px 0;
+    text-align: center;
+    color: #909da4;
+    font-size: 13px;
+}
+
+
+/* ===================== MOBILE NAV ===================== */
+
+.navbar-toggler-custom {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    padding: 6px 10px;
+    color: var(--secondary);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    background: #fff;
+    padding: 12px;
+    border-top: 2px solid var(--secondary);
+}
+
+.mobile-menu.open {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:hover {
+    color: var(--secondary);
+}
+
+
+/* Scroll to top */
+
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--secondary);
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.scroll-top:hover {
+    opacity: 0.85;
+}
+
+.scroll-top.visible {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+    .hero-content {
+        padding: 0 30px;
+    }
+    .hero-slider {
+        height: 400px;
+    }
+    .loe-banner h2 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-toggler-custom {
+        display: none;
+    }
+}
