@@ -904,6 +904,83 @@ a:hover {
     display: flex;
 }
 
+
+/*contact*/
+
+.form {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 40px;
+}
+
+.contact-container {
+    width: 700px;
+    margin: auto;
+}
+
+h1 {
+    color: #0b2b4f;
+    font-weight: bold;
+}
+
+.line {
+    width: 120px;
+    height: 4px;
+    background: #f4c200;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+span {
+    color: red;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.name-group {
+    display: flex;
+    gap: 20px;
+}
+
+.name-group input {
+    width: 50%;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    margin-top: 25px;
+    background: #1d6fa5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #155b87;
+}
+
 @media (max-width: 768px) {
     .main-navigation {
         display: none;

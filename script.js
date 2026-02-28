@@ -24,3 +24,29 @@
      const btn = document.getElementById('scrollTop');
      btn.classList.toggle('visible', window.scrollY > 400);
  });
+ //contact
+ document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+     e.preventDefault();
+
+     let prenom = document.getElementById("prenom").value;
+     let nom = document.getElementById("nom").value;
+     let telephone = document.getElementById("telephone").value;
+     let email = document.getElementById("email").value;
+     let message = document.getElementById("message").value;
+
+     let contact = {
+         prenom: prenom,
+         nom: nom,
+         telephone: telephone,
+         email: email,
+         message: message
+     };
+
+     localStorage.setItem("contactForm", JSON.stringify(contact));
+
+     alert("Message enregistré dans le navigateur");
+
+     document.getElementById("contactForm").reset();
+
+ });
