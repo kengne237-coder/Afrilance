@@ -966,7 +966,7 @@ textarea {
     resize: none;
 }
 
-button {
+.bout {
     margin-top: 25px;
     background: #1d6fa5;
     color: white;
